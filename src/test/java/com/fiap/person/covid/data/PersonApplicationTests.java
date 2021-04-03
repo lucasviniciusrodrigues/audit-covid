@@ -1,10 +1,10 @@
-package com.fiap.covid.data.coviddata;
+package com.fiap.person.covid.data;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CovidDataApplicationTests {
+class PersonApplicationTests {
 
 	@Test
 	void contextLoads() {
