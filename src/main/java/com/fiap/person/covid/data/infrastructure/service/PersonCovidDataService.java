@@ -23,20 +23,20 @@ public class PersonCovidDataService {
     }
     @SneakyThrows
     public Person getPersonByRegister(String register){
-        return personCovidDataRepository.findFirstByRegister(register)
+        return personCovidDataRepository.findById(register)
                 .map(person -> person)
                 .orElseThrow(ChangeSetPersister.NotFoundException::new);
     }
     @SneakyThrows
     public Person getPersonByDocument(String document) {
-        return personCovidDataRepository.findById(document)
+        return personCovidDataRepository.findFirstByDocument(document)
                 .map(person -> person)
                 .orElseThrow(ChangeSetPersister.NotFoundException::new);
     }
 
     @SneakyThrows
-    public Person getPersonsByRegister(String document) {
-        return personCovidDataRepository.findFirstByRegister(document)
+    public Person getPersonsByRegister(String register) {
+        return personCovidDataRepository.findById(register)
                 .map(person -> person)
                 .orElseThrow(ChangeSetPersister.NotFoundException::new);
     }

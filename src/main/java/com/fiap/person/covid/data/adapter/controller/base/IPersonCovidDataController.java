@@ -50,6 +50,6 @@ public interface IPersonCovidDataController {
             @ApiResponse(responseCode = "200", description = "Return founded data",
                     content = { @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class)) }),
             @ApiResponse(responseCode = "404", description = "document not found", content = @Content)})
-    @PutMapping(value = "/{document}")
-    public Person updatePersonCovidData(@RequestBody Person Person, @PathVariable("document") String register);
+    @PutMapping(value = "/{register}")
+    public Person updatePersonCovidData(@RequestBody Person Person, @PathVariable("register") String register);
 }

@@ -41,9 +41,9 @@ public class PersonCovidDataController implements IPersonCovidDataController {
 
     public Person updatePersonCovidData(
             Person person,
-            String document)
+            String register)
     {
-        return personCovidDataService.postPerson(person, document);
+        return personCovidDataService.postPerson(person, register);
     }
 
 }

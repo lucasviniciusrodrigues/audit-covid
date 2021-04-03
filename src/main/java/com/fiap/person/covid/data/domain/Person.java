@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class Person {
 
         @Id
-        private String document;
         private String register;
+        private String document;
         private String name;
         private String birthday;
         private CovidData covidData = new CovidData();
