@@ -11,5 +11,4 @@ public class SymptomsData {
         ArrayList<String> symptoms = new ArrayList<String>();
         private SymptonsSeverity symptomsSeverity;
         private boolean symptomsRemainedAfterRecovery;
-        DateRange dateRangeSymptoms = new DateRange();
 }

@@ -12,38 +12,45 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("person/covid/data/v1")
-public interface IPersonCovidDataController {
+@RequestMapping("/v1/person")
+public interface IPersonController {
 
-    @Operation(summary = "Get all data from database")
+    @Operation(summary = "Get all persons from database")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Return all founded data",
-                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class)) })}) // How set return list?
+                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = Person[].class)) })})
     @GetMapping()
-    public List<Person> getAllPersonCovidData();
+    List<Person> getAllPerson();
+
+    @Operation(summary = "Get all person registered today")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Return all founded data",
+                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = Person[].class)) })})
+    @GetMapping("/recently")
+    List<Person> getAllRecentlyPerson();
 
     @Operation(summary = "Get data from database by register")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Return founded data",
                     content = { @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class)) }),
             @ApiResponse(responseCode = "404", description = "Register not found", content = @Content)})
-    @GetMapping(value = "register/{register}")
-    public Person getPersonCovidDataByRegister(@PathVariable("register") String register) throws ChangeSetPersister.NotFoundException;
+    @GetMapping(value = "/{register}")
+    Person getPersonByRegister(@PathVariable("register") String register) throws ChangeSetPersister.NotFoundException;
 
     @Operation(summary = "Get data from database by document")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Return founded data",
                     content = { @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class)) }),
             @ApiResponse(responseCode = "404", description = "Register not found", content = @Content)})
-    @GetMapping(value = "document/{document}")
-    public Person getPersonCovidDataByDocument(@PathVariable("document") String document);
+    @GetMapping("/search")
+    Person getPersonByDocument(@RequestParam(required = true) String document);
 
     @Operation(summary = "Insert data at database")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Created resource",
                     content = { @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class)) })})
     @PostMapping()
-    public ResponseEntity<Person> postPersonCovidData(@RequestBody Person Person);
+    ResponseEntity<Person> postPerson(@RequestBody Person Person);
 
     @Operation(summary = "Update data from database by document")
     @ApiResponses(value = {
@@ -51,5 +58,13 @@ public interface IPersonCovidDataController {
                     content = { @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class)) }),
             @ApiResponse(responseCode = "404", description = "document not found", content = @Content)})
     @PutMapping(value = "/{register}")
-    public Person updatePersonCovidData(@RequestBody Person Person, @PathVariable("register") String register);
+    Person updatePerson(@RequestBody Person Person, @PathVariable("register") String register);
+
+    @Operation(summary = "Delete data from database by register")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Return deleted data",
+                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = Person.class)) }),
+            @ApiResponse(responseCode = "404", description = "register not found", content = @Content)})
+    @DeleteMapping(value = "/{register}")
+    ResponseEntity deletePerson(@PathVariable("register") String register);
 }

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface PersonCovidDataRepository extends MongoRepository<Person, String> {
 
-    public Optional<Person> findFirstByDocument(String document);
+    Optional<Person> findFirstByDocument(String document);
 
 }
 

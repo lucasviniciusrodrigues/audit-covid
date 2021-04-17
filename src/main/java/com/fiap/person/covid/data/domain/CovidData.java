@@ -11,6 +11,6 @@ public class CovidData {
         private boolean alreadyInfected;
         private boolean contactWithInfectedRecently;
         private boolean alreadyVaccinated;
-        private String vaccinatedDate;
-        ArrayList<SymptomsData> symptomsData = new ArrayList<SymptomsData>();
+        private ArrayList<String> vaccinatedDates;
+        ArrayList<SymptomsData> symptomsData = new ArrayList<>();
 }
