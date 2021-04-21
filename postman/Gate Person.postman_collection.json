@@ -67,11 +67,11 @@
 		{
 			"name": "Update person",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"document\": \"12345678915\",\r\n    \"register\": \"1527\",\r\n    \"name\": \"Meu nome não é Tonho\",\r\n    \"birthday\": \"15/01/1994\",\r\n    \"covidData\": {\r\n        \"alreadyInfected\": true,\r\n        \"contactWithInfectedRecently\": false,\r\n        \"alreadyVaccinated\": true,\r\n        \"vaccinatedDate\": \"18/03/2022\",\r\n        \"symptomsData\": [\r\n            {\r\n                \"symptoms\": [\r\n                    \"Tosse\"\r\n                ],\r\n                \"symptomsSeverity\": \"LIGHT\",\r\n                \"symptomsRemainedAfterRecovery\": false,\r\n                \"dateRangeSymptoms\": {\r\n                    \"startDate\": \"11/03/2022\",\r\n                    \"endDate\": \"12/04/2022\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}",
+					"raw": "{\r\n    \"document\": \"12345678915\",\r\n    \"register\": \"1527\",\r\n    \"name\": \"Meu nome não é Tonho\",\r\n    \"birthday\": \"15/01/1995\",\r\n    \"covidData\": {\r\n        \"alreadyInfected\": true,\r\n        \"contactWithInfectedRecently\": false,\r\n        \"alreadyVaccinated\": true,\r\n        \"vaccinatedDate\": \"18/03/2022\",\r\n        \"symptomsData\": [\r\n            {\r\n                \"symptoms\": [\r\n                    \"Tosse\"\r\n                ],\r\n                \"symptomsSeverity\": \"LIGHT\",\r\n                \"symptomsRemainedAfterRecovery\": false,\r\n                \"dateRangeSymptoms\": {\r\n                    \"startDate\": \"11/03/2022\",\r\n                    \"endDate\": \"12/04/2022\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -79,14 +79,15 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/v1/person",
+					"raw": "localhost:8080/v1/person/1527",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"v1",
-						"person"
+						"person",
+						"1527"
 					]
 				}
 			},
@@ -117,7 +118,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/v1/person/search?document=12345678911",
+					"raw": "localhost:8080/v1/person/search?document=12345678915",
 					"host": [
 						"localhost"
 					],
@@ -135,7 +136,7 @@
 						},
 						{
 							"key": "document",
-							"value": "12345678911"
+							"value": "12345678915"
 						}
 					]
 				}
@@ -164,7 +165,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/v1/person/1521",
+					"raw": "localhost:8080/v1/person/1527",
 					"host": [
 						"localhost"
 					],
@@ -172,7 +173,7 @@
 					"path": [
 						"v1",
 						"person",
-						"1521"
+						"1527"
 					],
 					"query": [
 						{
