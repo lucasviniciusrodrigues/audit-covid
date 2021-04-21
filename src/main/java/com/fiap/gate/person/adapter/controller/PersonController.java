@@ -38,17 +38,9 @@ public class PersonController implements IPersonController {
         return personService.getPersonByDocument(document);
     }
 
-    public ResponseEntity<Person> postPerson(Person person)
-    {
-        return new ResponseEntity<Person>(personService.postPerson(person), HttpStatus.CREATED);
-    }
+    public ResponseEntity<Person> postPerson(Person person) { return new ResponseEntity<Person>(personService.postPerson(person), HttpStatus.CREATED);   }
 
-    public Person updatePerson(
-            Person person,
-            String register)
-    {
-        return personService.updatePerson(person, register);
-    }
+    public Person updatePerson(Person person) { return personService.updatePerson(person, person.getRegister()); }
 
     @Override
     public ResponseEntity deletePerson(String register) {

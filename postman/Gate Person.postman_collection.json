@@ -79,15 +79,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/v1/person/1527",
+					"raw": "localhost:8080/v1/person",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"v1",
-						"person",
-						"1527"
+						"person"
 					]
 				}
 			},
