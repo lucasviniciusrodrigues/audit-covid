@@ -47,7 +47,7 @@ public class PersonController implements IPersonController {
             Person person,
             String register)
     {
-        return personService.postPerson(person, register);
+        return personService.updatePerson(person, register);
     }
 
     @Override

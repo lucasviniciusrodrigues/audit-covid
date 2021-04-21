@@ -8,7 +8,6 @@ import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -50,7 +49,7 @@ public class PersonService {
     }
 
     @SneakyThrows
-    public Person postPerson(Person updatedPerson, String document) {
+    public Person updatePerson(Person updatedPerson, String document) {
         Person person = personCovidDataRepository.findById(document)
                 .orElseThrow(ChangeSetPersister.NotFoundException::new);
 
