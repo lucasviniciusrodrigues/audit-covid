@@ -1,4 +1,4 @@
-package com.fiap.person.covid.data;
+package com.fiap.gate.person;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

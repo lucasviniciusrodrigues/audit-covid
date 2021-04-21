@@ -1,4 +1,4 @@
-package com.fiap.person.covid.data.adapter.exception;
+package com.fiap.gate.person.adapter.exception;
 
 import com.mongodb.MongoWriteException;
 import org.springdoc.api.ErrorMessage;

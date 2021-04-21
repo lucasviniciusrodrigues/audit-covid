@@ -1,4 +1,4 @@
-package com.fiap.person.covid.data;
+package com.fiap.gate.person;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

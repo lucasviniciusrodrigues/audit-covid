@@ -1,4 +1,4 @@
-package com.fiap.person.covid.data.domain;
+package com.fiap.gate.person.domain;
 
 public enum SymptonsSeverity {
     ASYMPTOMATIC,

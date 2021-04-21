@@ -1,7 +1,7 @@
-package com.fiap.person.covid.data.infrastructure.repository;
+package com.fiap.gate.person.infrastructure.repository;
 
 
-import com.fiap.person.covid.data.domain.Person;
+import com.fiap.gate.person.domain.Person;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

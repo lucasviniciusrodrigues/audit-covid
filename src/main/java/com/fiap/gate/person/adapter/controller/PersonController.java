@@ -1,8 +1,8 @@
-package com.fiap.person.covid.data.adapter.controller;
+package com.fiap.gate.person.adapter.controller;
 
-import com.fiap.person.covid.data.adapter.controller.base.IPersonController;
-import com.fiap.person.covid.data.domain.Person;
-import com.fiap.person.covid.data.infrastructure.service.PersonService;
+import com.fiap.gate.person.adapter.controller.base.IPersonController;
+import com.fiap.gate.person.domain.Person;
+import com.fiap.gate.person.infrastructure.service.PersonService;
 import lombok.SneakyThrows;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
