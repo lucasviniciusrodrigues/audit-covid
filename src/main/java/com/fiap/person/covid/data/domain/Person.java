@@ -1,4 +1,4 @@
-package com.fiap.gate.person.domain;
+package com.fiap.person.covid.data.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;

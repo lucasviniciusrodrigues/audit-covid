@@ -1,6 +1,6 @@
-package com.fiap.gate.person.adapter.controller.base;
+package com.fiap.person.covid.data.adapter.controller.base;
 
-import com.fiap.gate.person.domain.Person;
+import com.fiap.person.covid.data.domain.Person;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

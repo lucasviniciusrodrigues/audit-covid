@@ -1,8 +1,8 @@
-package com.fiap.gate.person.infrastructure.service;
+package com.fiap.person.covid.data.infrastructure.service;
 
-import com.fiap.gate.person.domain.Person;
-import com.fiap.gate.person.domain.SymptomsData;
-import com.fiap.gate.person.infrastructure.repository.PersonCovidDataRepository;
+import com.fiap.person.covid.data.domain.Person;
+import com.fiap.person.covid.data.domain.SymptomsData;
+import com.fiap.person.covid.data.infrastructure.repository.PersonCovidDataRepository;
 import lombok.SneakyThrows;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;

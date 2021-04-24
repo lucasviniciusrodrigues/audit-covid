@@ -1,4 +1,4 @@
-package com.fiap.gate.person.domain;
+package com.fiap.person.covid.data.domain;
 
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
