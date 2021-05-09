@@ -53,13 +53,12 @@ public class PersonService {
         Person person = personCovidDataRepository.findById(document)
                 .orElseThrow(ChangeSetPersister.NotFoundException::new);
 
-        person.setBirthday(updatedPerson.getBirthday());
         for(SymptomsData symptomsData : person.getCovidData().getSymptomsData()){
             updatedPerson.getCovidData().getSymptomsData().add(symptomsData);
         }
 
-        person.setCovidData(updatedPerson.getCovidData());
-        person.setUpdateDateNow();
+        updatedPerson.setUpdateDateNow();
+        updatedPerson.setInsertDate(person.getInsertDate());
 
         return personCovidDataRepository.save(updatedPerson);
     }
