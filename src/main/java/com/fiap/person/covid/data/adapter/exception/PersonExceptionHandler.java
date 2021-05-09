@@ -1,4 +1,4 @@
-package com.fiap.gate.person.adapter.exception;
+package com.fiap.person.covid.data.adapter.exception;
 
 import com.mongodb.MongoWriteException;
 import org.springdoc.api.ErrorMessage;
@@ -13,7 +13,7 @@ class PersonExceptionHandler {
 
     @ExceptionHandler(value = ChangeSetPersister.NotFoundException.class)
     public ResponseEntity<Object> badRequestProductNotDeclare(ChangeSetPersister.NotFoundException e){
-        return new ResponseEntity<Object>(new ErrorMessage("Data not found"), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<Object>(new ErrorMessage("Data not found"), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(value = MongoWriteException.class)

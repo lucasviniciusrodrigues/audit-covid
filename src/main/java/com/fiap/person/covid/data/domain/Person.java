@@ -1,6 +1,7 @@
 package com.fiap.person.covid.data.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -21,10 +22,10 @@ public class Person {
         private String birthday;
         private CovidData covidData = new CovidData();
 
-        @JsonIgnore
+        @JsonProperty(access = JsonProperty.Access.READ_ONLY)
         private LocalDate insertDate;
 
-        @JsonIgnore
+        @JsonProperty(access = JsonProperty.Access.READ_ONLY)
         private LocalDate updateDate;
 
         public void setInsertDateNow() {
